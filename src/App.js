@@ -16,9 +16,11 @@ function App() {
       {/* rows */}
       <Row title="Programmes originaux Netflix" Url={request.fetchNetflixOriginals} isPoster={true}/>
       <Row title="Tendances actuelles" Url={request.fetchTrending} />
-      <Row title="Films d'action" Url={request.fetchActionMovies} />
+      <Row title="Films d'action" Url={request.fetchThrillerMovies} />
       <Row title="Film comédie" Url={request.fetchComedyMovies}/>
-      <Row title="Series comedie" Url={request.fetchDocumentaries}/>
+      <Row title="Serie Mystérieuse" Url={request.fetchHorrorMovies}/>
+      <Row title="Serie Kids" Url={request.fetchKidsSeries}/>
+      <Row title="Series TV populaire" Url={request.fetchSeriesTV}/>
 
       {/* video */}
 
