@@ -1,23 +1,25 @@
 import React from 'react';
 import './App.scss';
+import Footer from './components/Footer';
 import Nav from './components/Nav';
 
 function App() {
   return (
     <div className="App">
       {/* navabar */}
-    <Nav />
+      <Nav />
+      <div className="test"></div>
       {/* banner */}
 
       {/* rows */}
 
       {/* video */}
 
-    {/* qUICK VIEW */}
+      {/* qUICK VIEW */}
 
       {/* footer */}
-
-       </div>
+      <Footer />
+    </div>
   );
 }
 
