@@ -7,10 +7,11 @@ import movieTrailer from 'movie-trailer';
 
 const Row = ({ title, Url, isPoster }) => {
 
-  const baseUrl = "https://image.tmdb.org/t/p/original/"
+  const baseUrl = "https://image.tmdb.org/t/p/original"
 
   const [movies, setMovies] = useState([])
   const [trailerUrl, setTrailerUrl] = useState("");
+
 
   useEffect(() => {
     async function fetchData() {
@@ -30,15 +31,18 @@ const Row = ({ title, Url, isPoster }) => {
   };
 
   console.log(movies)
+  
   const handleClick = (movie) => {
     // console.table(movie?.title)
     if (trailerUrl) {
       setTrailerUrl('')
     } else {
+      
       movieTrailer(movie?.title || movie?.name || movie?.original_title)
         .then(url => {
           const urlParams = new URLSearchParams(new URL(url).search);
           setTrailerUrl(urlParams.get('v'));
+         
         }).catch((error) => console.log(error));
     }
   }
@@ -52,7 +56,7 @@ const Row = ({ title, Url, isPoster }) => {
 
             {isPoster ? (
               <img
-                src={`${baseUrl}/${movie.poster_path}`}
+                src={`${baseUrl}/${movie?.poster_path}`}
                 onClick={() => handleClick(movie)}
                 className="row__image"
                 alt={movie?.title || movie?.name || movie?.original_title}
@@ -71,6 +75,7 @@ const Row = ({ title, Url, isPoster }) => {
       </div>
       <div style={{ padding: "40px" }}>
         {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
+       
       </div>
     </div>
   )

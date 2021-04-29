@@ -3,7 +3,8 @@
 
 
 
-const API_KEY = "b0b474f3b6b405e715c19f3df2dad99f";
+const API_KEY = process.env.REACT_APP_API_KEY;
+
 const BASE_URL = "https://api.themoviedb.org/3";
 
 const request = {

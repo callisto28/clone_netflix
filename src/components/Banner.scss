@@ -14,6 +14,17 @@
     height: 80vh;
     padding-bottom: 7rem;
   }
+  .video {
+    z-index: 1;
+    display: inline;
+    align-items: center;
+    
+    iframe {   
+      pointer-events:'auto';
+      width: 50vw;
+      height: 30vh;
+    }
+  }
 
   &__content {
     
